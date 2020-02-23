@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+<title>EisenBoard</title>
+<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1">
+<style>
+form {
+	margin: 5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>New Task</h2>
+
+<form>
+  <label for="tName">Task name:</label><br>
+  <input type="text" id="taskName" name="taskName"><br><br>
+  <label for="tDescription">Description:</label><br>
+  <textarea id="tDescription" rows="4" cols="50"></textarea><br><br>
+  <label for="tDue">Due date:</label><br>
+  <input type="text" id="tDue" name="tDue"><br><br>
+  <label for="tPreferredComplete">Preferred completion date:</label><br>
+  <input type="text" id="tPreferredComplete" name="tPreferredComplete"><br><br>
+  <label for="tTimeToComplete">Estimated time to complete:</label><br>
+  <input type="text" id="tTimeToComplete" name="tTimeToComplete"><br><br>
+  <label for="tCriticalRank">Critical rank:</label><br>
+  <input type="text" id="tCriticalRank" name="tCriticalRank"><br><br>
+  <label for="tCategory">Category:</label><br>
+  <input type="text" id="tCategory" name="tCategory"><br>
+    <br><br>
+  <button>Save</button>
+  <button>Cancel</button>
+</form> 
+
+</body>
+</html>
