@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+<title>EisenBoard</title>
+<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+	margin-top: 10px;
+}
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 14%;
+  padding: 0 5px;
+}
+.column-grid {
+  float: left;
+  width: 33%;
+  padding: 0 5px;
+}
+.column-grid-description {
+  float: left;
+  width: 66%;
+  padding: 0 5px;
+}
+
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  padding: 3%;
+  text-align: left;
+  background-color: #bdecff;
+  width: 90%;
+  margin: 0 auto;
+  font-size: small;
+  margin-bottom:5px;
+}
+.expandedCard {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  padding: 1px;
+  padding-left: 10px;
+  margin-bottom: 5px;
+  text-align: left;
+  background-color: #bdecff;
+  width: 98%;
+}
+.day {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 1px;
+  height: 310px;
+  text-align: center;
+  background-color: #f1f1f1;
+  overflow: auto;
+}
+</style>
+</head>
+<body>
+
+<script>
+var taskTitle = "New Task";
+var firstLine = "Description";
+var secondLine = "More";
+var day = "MondayContainer";
+var completion = "Preferred Completion: Monday"
+var due = "Due: Monday"
+
+function addCard(){
+  var newHtml = "<h3>" + taskTitle + "</h3><p>" + firstLine + "</p><p>" + secondLine + "</p>";
+  var crd = document.createElement("div");
+  crd.classList.add("card");
+  crd.innerHTML = newHtml;
+  document.getElementById(day).appendChild(crd);
+  //addExpandedCard()
+}
+function addExpandedCard(){
+  var newHtml = "<h4>" + taskTitle + "</h4><p>" + completion + "</p><p>" + due + "</p>";
+  var crd = document.createElement("div");
+  crd.classList.add("expandedCard");
+  crd.innerHTML = newHtml;
+  document.getElementById("expandedCards").appendChild(crd);
+}
+</script>
+
+<h2>EisenBoard</h2>
+<button type="button" onClick="addCard()">Add card</button><br></br>
+
+<div class="row">
+  <div class="column">
+    <div class="day">
+      <h4>Sunday</h4>
+      <div class="cardContainer" id="SundayContainer">
+        <div class="card">
+          <h3>Task</h3>
+          <p>Some text</p>
+          <p>Some text</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="day">
+      <h4>Monday</h4>
+      <div class="cardContainer" id="MondayContainer">
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="day">
+      <h4>Tuesday</h4>
+      <div class="cardContainer" id="TuesdayContainer">
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="day">
+      <h4>Wednesday</h4>
+      <div class="cardContainer" id="WednesdayContainer">
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="day">
+      <h4>Thursday</h4>
+      <div class="cardContainer" id="ThursdayContainer">
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="day">
+      <h4>Friday</h4>
+      <div class="cardContainer" id="FridayContainer">
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="day">
+      <h4>Saturday</h4>
+      <div class="cardContainer" id="SaturdayContainer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<div id ="expandedCards">
+	<div class="expandedCard">
+   		<div class="row">
+  			<div class="column-grid">
+            	<div id="eTaskTitle">
+  					<h3>Title of the Task</h3>
+                </div>
+			</div>
+            <div class="column-grid">
+  				<div id="ePreferredCompletion">
+  					<p>Preferred Completion: Sunday</p>
+                </div>
+			</div>
+            <div class="column-grid">
+  				<div id="eDue">
+  					<p>Due: Sunday</p>
+                </div>
+			</div>
+            </div>
+      <div class="row">
+         <div class="column-grid-description">
+  				<div id="Description">
+  					<p>Task Description</p>
+                </div>
+			</div>
+            <div class="column-grid">
+  				<div id="eTimeToComplete">
+  					<p>Time to Complete: 1 hour</p>
+                </div>
+			</div>
+        </div>
+     <div class="row">
+         <div class="column-grid">
+  				<div id="eCategory">
+  					<p>Category: School</p>
+                </div>
+			</div>
+            <div class="column-grid">
+  				<div id="eRank">
+  					<p>Critical Rank: 1</p>
+                </div>
+			</div>
+            <div class="column-grid">
+  				<div id="eButtons">
+  					<button>Completed</button>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </div>
+			</div>
+        </div>
+	</div>
+</div>
+
+</body>
+</html>
