@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+    <title>EisenBoard</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!--<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1">-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div th:replace="fragments/topnav :: navbar"></div>
+
+<form>
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Task Title</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="taskTitle">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Description</span>
+            <textarea name="description" rows="10" cols="30"></textarea>
+        </div>
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Due Date</span>
+        </div>
+        <input type="datetime-local" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="dueDate">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Ranking (1 to 5):</span>
+        </div>
+        <input type="number" min="1" max="5" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="taskRanking">
+    </div>
+    <br/>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+<br/>
+<div class="row">
+    <div class="column">
+        <div class="day">
+            <h4>Sunday</h4>
+            <div class="cardContainer" id="SundayContainer">
+                <div class="card">
+                    <h3>Task</h3>
+                    <p>Some text</p>
+                    <p>Some text</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="day">
+            <h4>Monday</h4>
+            <div class="cardContainer" id="MondayContainer">
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="day">
+            <h4>Tuesday</h4>
+            <div class="cardContainer" id="TuesdayContainer">
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="day">
+            <h4>Wednesday</h4>
+            <div class="cardContainer" id="WednesdayContainer">
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="day">
+            <h4>Thursday</h4>
+            <div class="cardContainer" id="ThursdayContainer">
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="day">
+            <h4>Friday</h4>
+            <div class="cardContainer" id="FridayContainer">
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="day">
+            <h4>Saturday</h4>
+            <div class="cardContainer" id="SaturdayContainer">
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
