@@ -1,4 +1,4 @@
-package main.java.com.EisenBoard.WebAppDev.model;
+package com.EisenBoard.WebAppDev.model;
 
 import java.util.Date;
 
