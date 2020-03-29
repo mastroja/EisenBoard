@@ -4,14 +4,14 @@ import java.util.List;
 
 public class TaskList {
 
-    private List<TaskDTO> plants = null;
+    private List<TaskDTO> tasks = null;
 
-    public List<TaskDTO> getPlants() {
-        return plants;
+    public List<TaskDTO> getTasks() {
+        return tasks;
     }
 
-    public void setPlants(List<TaskDTO> plants) {
-        this.plants = plants;
+    public void setTasks(List<TaskDTO> tasks) {
+        this.tasks = tasks;
     }
 
 }
