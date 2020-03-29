@@ -13,30 +13,37 @@
 <body>
 <div th:replace="fragments/topnav :: navbar"></div>
 
-<form action="#" th:action="@{/addTask}" th:object="${activity}" method="post">
+
+<form action="#" th:action="@{/addTask}" th:object="${taskDTO}" method="post">
+
     <div class="input-group input-group-sm mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-sm">Task Title</span>
         </div>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="taskTitle" th:field="*{activityName}">
+
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="taskName" th:field="*{taskName}">
     </div>
     <div class="input-group input-group-sm mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-sm">Description</span>
-            <textarea name="description" rows="10" cols="30" th:field="*{additionalNotes}" value = ""></textarea>
+            <textarea name="description" rows="10" cols="30" th:field="*{description}" value = ""></textarea>
         </div>
     </div>
     <div class="input-group input-group-sm mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-sm">Due Date</span>
         </div>
-        <input type="datetime-local" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="dueDate" th:field="*{mustBeCompletedByDate}" >
+
+        <input type="datetime-local" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="dueDate" th:field="*{taskDueDate}" >
+
     </div>
     <div class="input-group input-group-sm mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-sm">Ranking (1 to 5):</span>
         </div>
-        <input type="number" min="1" max="5" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="taskRanking" th:field="*{ranking}">
+
+        <input type="number" min="1" max="5" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="taskRanking" th:field="*{rank}">
+
     </div>
     <br/>
     <div>
