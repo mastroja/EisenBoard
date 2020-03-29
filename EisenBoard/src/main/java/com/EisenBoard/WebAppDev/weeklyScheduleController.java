@@ -1,4 +1,4 @@
-package com.EisenBoard.WebAppDev.controller;
+package com.EisenBoard.WebAppDev;
 
 import org.springframework.web.bind.annotation.RestController;
 
