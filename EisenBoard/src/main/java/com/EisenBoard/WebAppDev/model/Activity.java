@@ -8,7 +8,7 @@ public class Activity {
     private Date goalCompletionDate;
     private Date mustBeCompletedByDate;
     private String additionalNotes;
-
+    private Integer ranking;
 
 
     public String getActivityName() {
@@ -43,10 +43,23 @@ public class Activity {
         this.additionalNotes = additionalNotes;
     }
 
-    public Activity(String activityName, Date goalCompletionDate, Date mustBeCompletedByDate, String additionalNotes) {
+    public Integer getRanking() {
+        return ranking;
+    }
+
+    public void setRanking(Integer ranking) {
+        this.ranking = ranking;
+    }
+
+    public Activity(String activityName, Date goalCompletionDate, Date mustBeCompletedByDate, String additionalNotes, Integer ranking) {
         this.activityName = activityName;
         this.goalCompletionDate = goalCompletionDate;
         this.mustBeCompletedByDate = mustBeCompletedByDate;
         this.additionalNotes = additionalNotes;
+        this.ranking = ranking;
+    }
+
+    public Activity() {
+
     }
 }

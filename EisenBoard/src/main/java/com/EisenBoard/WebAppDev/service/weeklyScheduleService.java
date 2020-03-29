@@ -8,5 +8,7 @@ import main.java.com.EisenBoard.WebAppDev.model.Activity;
 @Service
 public interface weeklyScheduleService {
 
+    public Iterable<Activity> findMonsters(MonsterSearchInfo monsterSearchInfo);
+
 
 }
