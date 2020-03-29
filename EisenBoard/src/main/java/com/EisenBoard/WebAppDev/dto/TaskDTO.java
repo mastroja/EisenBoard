@@ -8,6 +8,7 @@ public class TaskDTO {
     private Date goalCompletionDate;
     private Date taskDueDate;
     private String description;
+    private Integer rank;
 
 
     public String getTaskName() {
@@ -42,13 +43,32 @@ public class TaskDTO {
         this.description = description;
     }
 
-    public TaskDTO(String taskName, Date goalCompletionDate, Date taskDueDate, String description, int guid) {
+    public Integer getRank() {
+        return rank;
+    }
+
+    public void setRank(Integer rank) {
+        this.rank = rank;
+    }
+
+    public TaskDTO(String taskName, Date goalCompletionDate, Date taskDueDate, String description, int guid, Integer rank) {
         this.taskName = taskName;
         this.goalCompletionDate = goalCompletionDate;
         this.taskDueDate = taskDueDate;
         this.description = description;
+        this.rank = rank;
     }
-    
+
+    public TaskDTO() {
+    }
+
+    public TaskDTO(String taskName, Date taskDueDate, String description, Integer rank) {
+        this.taskName = taskName;
+        this.taskDueDate = taskDueDate;
+        this.description = description;
+        this.rank = rank;
+    }
+
     @Override
     public String toString() {
         // TODO Auto-generated method stub
