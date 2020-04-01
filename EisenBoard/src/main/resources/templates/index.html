@@ -3,44 +3,12 @@
 <head>
     <title>EisenBoard</title>
 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <!--<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1">-->
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 </head>
 <body>
 <div th:replace="fragments/topnav :: navbar"></div>
 
-<form>
-    <div class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-sm">Task Title</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="taskTitle">
-    </div>
-    <div class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-sm">Description</span>
-            <textarea name="description" rows="10" cols="30"></textarea>
-        </div>
-    </div>
-    <div class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-sm">Due Date</span>
-        </div>
-        <input type="datetime-local" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="dueDate">
-    </div>
-    <div class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-sm">Ranking (1 to 5):</span>
-        </div>
-        <input type="number" min="1" max="5" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="taskRanking">
-    </div>
-    <br/>
-    <div>
-        <input type="submit">
-    </div>
-</form>
 <br/>
 <div class="row">
     <div class="column">
@@ -105,5 +73,99 @@
     </div>
 </div>
 
+<br>
+
+
+<table>
+	<tr>
+		<td>
+<form>
+<section>
+    <h2>New Task</h2>
+    <div>
+        <span class="input-label">Task Title</span>
+        <input type="text" class="form-control" name="taskTitle">
+    </div>
+    <br>
+    <div>
+        <span class="input-label">Description</span><br>
+        <textarea class="form-control" name="description" rows="5"></textarea>
+    </div>
+    <br>
+    <div>
+        <span class="input-label">Due Date</span>
+        <input type="date" class="form-control" name="dueDate">
+    </div>
+    <br>
+    <div>
+        <span class="input-label" >Ranking (1 to 5)</span>
+        <input type="number" min="1" max="5" class="form-control" name="taskRanking">
+    </div>
+    <br>
+    <div>
+        <span class="input-label">Category</span>
+        <input type="text" class="form-control"  name="category">
+    </div>
+    <br/>
+    <div>
+        <input type="submit">
+    </div>
+</section>
+</form>
+
+</td>
+<td>
+
+<form>
+<section>
+    <h2>Expanded Task Card</h2>
+    <div>
+        <span class="exp-card-label">Task Title:</span>
+		<span class="exp-card-value">Title</span>
+    </div>
+    <br>
+    <div>
+        <span class="exp-card-label">Description:</span><br>
+		<span class="exp-card-value">Description</span>
+    </div>
+    <br>
+    <div>
+        <span class="exp-card-label">Due Date:</span>
+        <span class="exp-card-value">Date</span>
+    </div>
+    <br>
+    <div>
+        <span class="exp-card-label" >Ranking:</span>
+		<span class="exp-card-value">Rank</span>
+    </div>
+    <br>
+    <div>
+        <span class="exp-card-label">Category:</span>
+		<span class="exp-card-value">Cat</span>
+    </div>
+</section>
+</form>
+
+</td>
+</tr>
+
+<!-- This is for a possible task queue setup
+<tr>
+<td>
+
+<form>
+<section>
+    <h2>Task Queue</h2>
+    <div>
+        <span class="queue-label">Queue</span>
+    </div>
+    <div>I don't really know how this would work</div>
+</section>
+</form>
+
+	</td> 
+</tr>  -->
+
+</table>
 </body>
 </html>
